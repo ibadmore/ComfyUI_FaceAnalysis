@@ -1,10 +1,3 @@
-IS_DLIB_INSTALLED = False
-try:
-    import dlib
-    IS_DLIB_INSTALLED = True
-except ImportError:
-    pass
-
 IS_INSIGHTFACE_INSTALLED = False
 try:
     from insightface.app import FaceAnalysis
@@ -12,12 +5,10 @@ try:
 except ImportError:
     pass
 
-if not IS_DLIB_INSTALLED and not IS_INSIGHTFACE_INSTALLED:
+if not IS_INSIGHTFACE_INSTALLED:
     raise Exception("Please install either dlib or insightface to use this node.")
 
 INSTALLED_LIBRARIES = []
-if IS_DLIB_INSTALLED:
-    INSTALLED_LIBRARIES.append("dlib")
 if IS_INSIGHTFACE_INSTALLED:
     INSTALLED_LIBRARIES.append("insightface")
 
