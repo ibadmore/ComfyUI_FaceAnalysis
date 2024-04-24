@@ -1,4 +1,4 @@
-IS_INSIGHTFACE_INSTALLED = False
+IS_INSIGHTFACE_INSTALLED = True
 try:
     from insightface.app import FaceAnalysis
     IS_INSIGHTFACE_INSTALLED = True
